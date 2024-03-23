@@ -12,5 +12,5 @@ variable "region" {
 
 variable "max_hours" {
   type    = string
-  default = "0"
+  default = "12"
 }
