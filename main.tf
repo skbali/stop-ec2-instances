@@ -34,6 +34,7 @@ resource "aws_lambda_function" "stop_ec2" {
 resource "aws_cloudwatch_event_rule" "every_30_min" {
   name                = "stop-ec2-go-30-min"
   schedule_expression = "rate(30 minutes)"
+  tags                = var.tags
 }
 
 resource "aws_cloudwatch_event_target" "stop_ec2_go_lambda_target" {
