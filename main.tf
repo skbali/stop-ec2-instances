@@ -18,6 +18,7 @@ resource "aws_lambda_function" "stop_ec2" {
   runtime          = "provided.al2"
   timeout          = 120
   memory_size      = 128
+  architectures    = ["arm64"]
   filename         = data.archive_file.stop_ec2_zip.output_path
   source_code_hash = data.archive_file.stop_ec2_zip.output_base64sha256
 
